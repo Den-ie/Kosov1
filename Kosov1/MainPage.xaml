@@ -3,7 +3,7 @@
              x:Class="Kosov1.MainPage">
 
     <ScrollView>
-        <StackLayout>
+        <StackLayout Spacing="10" Padding="5">
             <Frame>
                 <Label x:Name="SelectedText" FontSize="24" TextColor="Blue"/>
             </Frame>
@@ -31,6 +31,11 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <Entry x:Name="Find"/>
+
+            <Button Text="Найти"
+                    FontSize="26"
+                    Clicked="FindClass"/>
         </StackLayout>
     </ScrollView>
 </ContentPage>
