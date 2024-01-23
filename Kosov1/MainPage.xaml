@@ -9,7 +9,7 @@
             </Frame>
 
             <ListView x:Name="ItemsList" 
-                      ItemSelected="SelIt">
+                      ItemSelected="SelectIt">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
