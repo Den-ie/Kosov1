@@ -1,0 +1,36 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Kosov1.MainPage">
+
+    <ScrollView>
+        <StackLayout>
+            <Frame>
+                <Label x:Name="SelectedText" FontSize="24" TextColor="Blue"/>
+            </Frame>
+
+            <ListView x:Name="ItemsList" 
+                      ItemSelected="SelIt">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding Name}" FontSize="18"/>
+                                <StackLayout Orientation="Horizontal" Spacing="15">
+                                    <Label Text="{Binding Teacher}"/>
+                                    <StackLayout Orientation="Horizontal" Spacing="5">
+                                        <Label Text="{Binding ClassNumber}"/>
+                                        <Label Text="кабинет"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" Spacing="5">
+                                        <Label Text="{Binding HoursAmount}"/>
+                                        <Label Text="часов"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
