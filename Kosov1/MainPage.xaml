@@ -36,6 +36,18 @@
             <Button Text="Найти"
                     FontSize="26"
                     Clicked="FindClass"/>
+
+            <Button Text="Сохранить"
+                    FontSize="26"
+                    Clicked="Save"/>
+
+            <Button Text="Загрузить"
+                    FontSize="26"
+                    Clicked="Load"/>
+            
+            <Button Text="Удалить"
+                    FontSize="26"
+                    Clicked="Delete"/>
         </StackLayout>
     </ScrollView>
 </ContentPage>
