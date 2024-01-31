@@ -33,21 +33,34 @@
             </ListView>
             <Entry x:Name="Find"/>
 
-            <Button Text="Найти"
-                    FontSize="26"
-                    Clicked="FindClass"/>
+            <HorizontalStackLayout Spacing="10" Padding="10">
+                <StackLayout Spacing="10">
+                    <Button Text="Сохранить"
+                    FontSize="16"
+                    Clicked="Save"
+                    WidthRequest="160"/>
 
-            <Button Text="Сохранить"
-                    FontSize="26"
-                    Clicked="Save"/>
+                    <Button Text="Загрузить"
+                    FontSize="16"
+                    Clicked="Load" WidthRequest="160"/>
 
-            <Button Text="Загрузить"
-                    FontSize="26"
-                    Clicked="Load"/>
-            
-            <Button Text="Удалить"
-                    FontSize="26"
-                    Clicked="Delete"/>
+                    <Button Text="Удалить"
+                    FontSize="16"
+                    Clicked="Delete" WidthRequest="160"/>
+                </StackLayout>
+
+                <StackLayout Spacing="10">
+                    <Button Text="Найти"
+                    FontSize="16"
+                    Clicked="FindClass" WidthRequest="160"/>
+
+                    <Button Text="Добавить"
+                    FontSize="16" WidthRequest="160"/>
+
+                    <Button Text="Редактировать"
+                    FontSize="16" WidthRequest="160"/>
+                </StackLayout>
+            </HorizontalStackLayout>
         </StackLayout>
     </ScrollView>
 </ContentPage>
