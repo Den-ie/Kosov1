@@ -42,23 +42,30 @@
 
                     <Button Text="Загрузить"
                     FontSize="16"
-                    Clicked="Load" WidthRequest="160"/>
+                    Clicked="Load"  
+                    WidthRequest="160"/>
 
                     <Button Text="Удалить"
                     FontSize="16"
-                    Clicked="Delete" WidthRequest="160"/>
+                    Clicked="Delete" 
+                            WidthRequest="160"/>
                 </StackLayout>
 
                 <StackLayout Spacing="10">
                     <Button Text="Найти"
                     FontSize="16"
-                    Clicked="FindClass" WidthRequest="160"/>
+                    Clicked="FindClass" 
+                    WidthRequest="160"/>
 
                     <Button Text="Добавить"
-                    FontSize="16" WidthRequest="160"/>
+                    FontSize="16"
+                    Clicked="AddClick"
+                    WidthRequest="160"/>
 
                     <Button Text="Редактировать"
-                    FontSize="16" WidthRequest="160"/>
+                    FontSize="16"
+                    Clicked="EditClick"
+                    WidthRequest="160"/>
                 </StackLayout>
             </HorizontalStackLayout>
         </StackLayout>

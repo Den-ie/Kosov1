@@ -9,6 +9,6 @@
 
     <ShellContent
         Title="Логин"
-        ContentTemplate="{DataTemplate local:Password}"
-        Route="Password" />
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage"/>
 </Shell>

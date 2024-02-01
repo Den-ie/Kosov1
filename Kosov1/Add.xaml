@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Kosov1.Add"
+             Title="Добавление">
+    <StackLayout Padding="5" Spacing="5">
+        <Label Text=" Дисциплина"/>
+        <Entry x:Name="DisciplineAdd"/>
+        <Label FontSize="25"/>
+
+        <Label Text=" Преподаватель"/>
+        <Entry x:Name="TeacherAdd"/>
+        <Label FontSize="25"/>
+
+        <Label Text=" Номер кабинета"/>
+        <Entry x:Name="ClassNumberAdd"/>
+        <Label FontSize="25"/>
+
+        <Label Text=" Кол-во часов"/>
+        <Entry x:Name="HoursAmountAdd"/>
+        
+        <Button Text="Добавить" VerticalOptions="EndAndExpand" Clicked="Adding"/>
+        <Button Text="Отмена" VerticalOptions="End" Clicked="Cancel"/>
+    </StackLayout>
+</ContentPage>

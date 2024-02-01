@@ -70,5 +70,16 @@ namespace Kosov1
                 disciplines.Remove(discip);
             }
         }
+
+        private async void EditClick(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Edit());
+        }
+
+        private async void AddClick(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Add(disciplines));
+        }
+
     }
 }
