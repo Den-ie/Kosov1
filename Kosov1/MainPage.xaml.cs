@@ -5,26 +5,30 @@ namespace Kosov1
 {
     public partial class MainPage : ContentPage
     {
-        ObservableCollection<Discipline> disciplines;
 
         public MainPage()
         {
             InitializeComponent();
-            disciplines = new ObservableCollection<Discipline>();
-            disciplines.Add(new Discipline { Name = "Математика", Teacher = "Кавасаки В.О.", ClassNumber = 44, HoursAmount = 64 });
-            disciplines.Add(new Discipline { Name = "Физика", Teacher = "Стрипер Г.П.", ClassNumber = 12, HoursAmount = 32 });
-            disciplines.Add(new Discipline { Name = "Физ-ра", Teacher = "Крико А.А.", ClassNumber = 0, HoursAmount = 16 });
-            disciplines.Add(new Discipline { Name = "Менеджмент", Teacher = "Shluxa G.G.", ClassNumber = -200, HoursAmount = 555 });
-            disciplines.Add(new Discipline { Name = "Менеджмент", Teacher = "Shluxa G.G.", ClassNumber = -200, HoursAmount = 555 });
-            disciplines.Add(new Discipline { Name = "Менеджмент", Teacher = "Shluxa G.G.", ClassNumber = -200, HoursAmount = 555 });
-            ItemsList.ItemsSource = disciplines;
+            Value.disciplines = new ObservableCollection<Discipline>();
+            Value.disciplines.Add(new Discipline { Name = "Математика", Teacher = "Кавасаки В.О.", ClassNumber = 44, HoursAmount = 64 });
+            Value.disciplines.Add(new Discipline { Name = "Физика", Teacher = "Стрипер Г.П.", ClassNumber = 12, HoursAmount = 32 });
+            Value.disciplines.Add(new Discipline { Name = "Физ-ра", Teacher = "Крико А.А.", ClassNumber = 0, HoursAmount = 16 });
+            Value.disciplines.Add(new Discipline { Name = "Менеджмент", Teacher = "Shluxa G.G.", ClassNumber = -200, HoursAmount = 555 });
+            Value.disciplines.Add(new Discipline { Name = "Менеджмент", Teacher = "Shluxa G.G.", ClassNumber = -200, HoursAmount = 555 });
+            Value.disciplines.Add(new Discipline { Name = "Менеджмент", Teacher = "Shluxa G.G.", ClassNumber = -200, HoursAmount = 555 });
+            ItemsList.ItemsSource = Value.disciplines;
+        }
+
+        protected virtual void OnAppearing()
+        {
+            ItemsList.ItemsSource = Value.disciplines;
         }
 
         private void FindClass(object sender, EventArgs e)
         {
             if (Int32.TryParse(Find.Text, out int searchCab))
             {
-                foreach (var objects in disciplines)
+                foreach (var objects in Value.disciplines)
                 {
                     if (searchCab == objects.ClassNumber) SelectedText.Text = objects.Name;
                     else DisplayAlert("Ошибка!", "Такого кабинета нет", "OK");
@@ -37,19 +41,19 @@ namespace Kosov1
 
         private void Save(object sender, EventArgs e)
         {
-            string JsonString = JsonSerializer.Serialize(disciplines);
-            StreamWriter sw = new StreamWriter(Path.Combine(mainDir, "disciplines.txt"));
+            string JsonString = JsonSerializer.Serialize(Value.disciplines);
+            StreamWriter sw = new StreamWriter(Path.Combine(mainDir, "Value.disciplines.txt"));
             sw.WriteLine(JsonString);
             sw.Close();
         }
 
         private void Load(object sender, EventArgs e)
         {
-            StreamReader sw = new StreamReader(Path.Combine(mainDir, "disciplines.txt"));
+            StreamReader sw = new StreamReader(Path.Combine(mainDir, "Value.disciplines.txt"));
             string jsonString = sw.ReadLine();
-            disciplines = JsonSerializer.Deserialize<ObservableCollection<Discipline>>(jsonString);
+            Value.disciplines = JsonSerializer.Deserialize<ObservableCollection<Discipline>>(jsonString);
             sw.Close();
-            ItemsList.ItemsSource = disciplines;
+            ItemsList.ItemsSource = Value.disciplines;
         }
 
         private void SelectIt(object sender, SelectedItemChangedEventArgs e)
@@ -67,7 +71,7 @@ namespace Kosov1
             Discipline discip = (Discipline)ItemsList.SelectedItem;
             if (discip != null)
             {
-                disciplines.Remove(discip);
+                Value.disciplines.Remove(discip);
             }
         }
 
@@ -78,7 +82,7 @@ namespace Kosov1
 
         private async void AddClick(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Add(disciplines));
+            await Navigation.PushAsync(new Add());
         }
 
     }

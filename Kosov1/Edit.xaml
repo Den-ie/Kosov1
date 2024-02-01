@@ -3,10 +3,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Kosov1.Edit"
              Title="Редактирование">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center"/>
-    </VerticalStackLayout>
+    <StackLayout Padding="5" Spacing="5">
+        <Label Text=" Дисциплина"/>
+        <Entry x:Name="DisciplineEdit" Text=""/>
+        <Label FontSize="25"/>
+
+        <Label Text=" Преподаватель"/>
+        <Entry x:Name="TeacherEdit" Text=""/>
+        <Label FontSize="25"/>
+
+        <Label Text=" Номер кабинета"/>
+        <Entry x:Name="ClassNumberEdit"/>
+        <Label FontSize="25"/>
+
+        <Label Text=" Кол-во часов"/>
+        <Entry x:Name="HoursAmountEdit"/>
+
+        <Button Text="Изменить" VerticalOptions="EndAndExpand" Clicked="Edding"/>
+        <Button Text="Отмена" VerticalOptions="End" Clicked="Cancel"/>
+    </StackLayout>
 </ContentPage>

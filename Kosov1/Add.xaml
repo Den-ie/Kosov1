@@ -5,11 +5,11 @@
              Title="Добавление">
     <StackLayout Padding="5" Spacing="5">
         <Label Text=" Дисциплина"/>
-        <Entry x:Name="DisciplineAdd"/>
+        <Entry x:Name="DisciplineAdd" Text=""/>
         <Label FontSize="25"/>
 
         <Label Text=" Преподаватель"/>
-        <Entry x:Name="TeacherAdd"/>
+        <Entry x:Name="TeacherAdd" Text=""/>
         <Label FontSize="25"/>
 
         <Label Text=" Номер кабинета"/>

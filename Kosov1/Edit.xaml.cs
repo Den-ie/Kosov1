@@ -6,4 +6,14 @@ public partial class Edit : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private void Edding(object sender, EventArgs e)
+    {
+
+    }
+
+    private async void Cancel(object sender, EventArgs e)
+    {
+        await Navigation.PopAsync();
+    }
 }
